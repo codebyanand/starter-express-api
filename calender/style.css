@@ -1,0 +1,94 @@
+/* calendar container */
+.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* month */
+.month {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* month buttons */
+.month .prev, .month .next {
+  cursor: pointer;
+  font-size: 20px;
+  color: #000;
+}
+
+/* month name and year */
+#month-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#year {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+/* weekdays */
+.weekdays {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* weekday */
+.weekdays li {
+  font-size: 14px;
+  font-weight: bold;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* days */
+.days {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* day */
+.days li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+}
+
+/* today */
+.days .today {
+  color: #fff;
+  background-color: #000;
+}
+
+/* prev and next month days */
+.days .prev-date, .days .next-date {
+  color: #ccc;
+}

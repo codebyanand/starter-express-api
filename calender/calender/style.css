@@ -1,0 +1,212 @@
+:root{
+  --main-color: #e0e0e0;
+  --shadow-light:#ffffff;
+  --shadow-dark:#b3b3b3;
+  --text-main:#303942;
+  --text-white:#fff;
+  --text-muted:rgb(156, 156, 156);
+  --accent-color:#9494ff;
+}
+.dark {
+  --main-color: #202124;
+  --shadow-light:#33353a;
+  --shadow-dark:#0d0d0e;
+  --text-main:#bdc6cf;
+  --text-white:#fff;
+  --text-muted: #787A91;
+  --accent-color:#381bae;
+}
+
+::selection {
+  color: #5eb0d7;
+}
+body{
+  background: var(--main-color);
+  color: var(--text-main);
+}
+
+.calendar, #con {
+    font-family: Arial, sans-serif;
+    margin: 15px;
+    padding: 20px;
+    flex: 1 1 300px;
+    border-radius: 10px;
+    box-shadow:6px 6px 10px var(--shadow-dark),
+    -6px -6px 10px var(--shadow-light);
+  }
+
+  button{
+    padding: 7px;
+    cursor: pointer;
+    background-color: var(--main-color);
+    border: 0;
+    border-radius: 5px;
+    color: var(--text-main);
+    box-shadow:3px 3px 5px var(--shadow-dark) inset,
+    -3px -3px 5px var(--shadow-light) inset;
+  }
+  
+  .month ul {
+    margin: 0 0 10px 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-main);
+  }
+  
+  .month li {
+    display: inline-block;
+    text-align: center;
+  }
+  
+  
+  .month li:hover {
+    cursor: pointer;
+  }
+
+  #month-name{
+    padding: 9px;
+    border-radius: 10px;
+    box-shadow:3px 3px 5px var(--shadow-dark) inset,
+    -3px -3px 5px var(--shadow-light) inset;
+  }
+
+  /* #month-name:hover{
+    background-color: #ccc;
+  } */
+  
+  .weekdays {
+    margin: 0;
+    padding: 10px 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-main);
+  }
+  
+  .weekdays li {
+    width: calc(100% / 7);
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .days {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    color: var(--text-main);
+  }
+  
+  .days li {
+    width: 30px;
+    text-align: center;
+    padding:7px 0 7px 0;
+    font-size: 14px;
+    margin: 0 calc((100% - 210px)/14);
+    border-radius: 50%;
+  }
+  
+  .days li:hover {
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow:3px 3px 5px var(--shadow-dark) inset,
+    -3px -3px 5px var(--shadow-light) inset;
+  }
+  
+  .days li.today {
+    font-weight: bold;
+    background-color: var(--accent-color);
+    box-shadow:3px 3px 5px var(--shadow-dark) inset,
+    -3px -3px 5px var(--shadow-light) inset;
+  }
+  
+  .days li.prev-date,
+  .days li.next-date {
+    color: var(--text-muted);
+  }
+
+
+
+
+
+
+
+
+  .label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    color: #394a56;
+  }
+  
+  .label-text {
+    margin-left: 16px;
+  }
+  
+  .toggle {
+    isolation: isolate;
+    position: relative;
+    height: 30px;
+    width: 60px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: -8px -4px 8px 0px var(--shadow-light),
+      8px 4px 12px 0px var(--shadow-dark),
+      4px 4px 4px 0px var(--shadow-dark) inset,
+      -4px -4px 4px 0px var(--shadow-light) inset;
+  }
+  
+  .toggle-state {
+    display: none;
+  }
+  
+  .indicator {
+    height: 100%;
+    width: 200%;
+    background: var(--text-main);
+    border-radius: 15px;
+    transform: translate3d(-75%, 0, 0);
+    transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+    box-shadow: -8px -4px 8px 0px var(--shadow-light),
+      8px 4px 12px 0px var(--shadow-dark);
+  }
+  
+  .toggle-state:checked ~ .indicator {
+    transform: translate3d(25%, 0, 0);
+  }
+
+
+
+
+
+
+
+
+  #cal{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .nav{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow:6px 6px 10px var(--shadow-dark) inset,
+    -6px -6px 10px var(--shadow-light) inset;
+    margin-bottom: 15px;
+    padding: 0 30px;
+    flex-wrap: wrap;
+  }
+
+  h2{
+    border-radius: 10px;
+    box-shadow:6px 6px 10px var(--shadow-dark) ,
+    -6px -6px 10px var(--shadow-light) ;
+    padding: 10px 30px;
+  }

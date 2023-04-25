@@ -1,0 +1,110 @@
+/* body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* h1 styling */
+  h1 {
+    color: #333;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  /* container styling */
+  #calender {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 20px;
+  }
+  
+  /* h2 styling */
+  #calender h2 {
+    font-size: 18px;
+    color: #555;
+    margin-top: 10px;
+  }
+  
+  /* calendar styling */
+  .calendar {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* month styling */
+  .month {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  /* month name styling */
+  #month-name {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 10px;
+  }
+  
+  /* weekdays styling */
+  .weekdays {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-left: 0;
+    list-style: none;
+  }
+  
+  /* weekdays item styling */
+  .weekdays li {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    width: calc(100% / 7);
+  }
+  
+  /* days styling */
+  .days {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    list-style: none;
+  }
+  
+  /* days item styling */
+  .days li {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    width: calc(100% / 7);
+    padding: 10px 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  /* days item hover styling */
+  .days li:hover {
+    background-color: #f2f2f2;
+  }
+  
+  /* days item active styling */
+  .days li.active {
+    background-color: #4a90e2;
+    color: #fff;
+  }
+  

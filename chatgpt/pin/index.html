@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Pincode Search</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    
+    <div class="container">
+      <button class="toggle-btn" onclick="toggleDarkMode()">
+        <div class="toggle-icon"></div>
+        <div class="toggle-label">Dark</div>
+      </button>
+      <h1>Pincode Search</h1>
+      <!-- <button onclick="toggleDarkMode()">Toggle Dark Mode</button> -->
+      <form>
+        <label for="pincode">Enter Pincode:</label>
+        <input type="text" id="pincode" name="pincode" placeholder="Enter Pincode" value="847404">
+        <button type="submit" id="search">Search</button>
+      </form>
+      <div id="results"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

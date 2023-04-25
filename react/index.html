@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><title>rendom</title><style>
+    .img {width: 150px;height: 100px;background-color: gray;border-radius: 7px;box-shadow: 0 0 10px 5px white;margin-left: calc(50% - 75px);}
+    .card {border: 1px solid black;margin: 5px;padding: 10px;border-radius: 10px;height: 100%;}
+    .card:hover {box-shadow: 0 0 10px 5px blue;transform: scale(0.97);}
+    @media (345px <= width <= 500px) {.card {width: 300px;margin: 5px calc(50% - 125px);}}
+    @media screen and (min-width: 500px) {.card { width: calc(100vw / 2 - 50px);}}
+    @media screen and (min-width: 750px) {.card {width: calc(100vw / 3 - 43px);}}
+    @media screen and (min-width: 900px) {.card {width: calc(100vw / 4 - 40px);}}
+    @media screen and (min-width: 1200px) {.card {width: calc(100vw / 5 - 39px);}}
+    .container {display: flex;flex-flow: row wrap;margin-top: 30px;}
+    .price {padding: 0;margin: 0 0 0 35%;}
+    .heading {display: flex;justify-content: space-between;width: calc(100vw - 50px);padding: 10px;border: 1px solid black;border-radius: 7px;flex-wrap: wrap;align-items: baseline;}
+    .menu {display: flex;}
+    .logo {display: flex;flex-direction: column;}
+    .logo > h1,p { margin: 0;}
+    .logo > h1 {margin: 10px 0 10px 0;}
+    .menu > a {border: 1px solid black;height: 20px;padding: 5px;margin: 5px;border-radius: 5px;text-decoration: none;color: black;}
+  </style></head>
+  <body>
+    <div id="root"></div>
+    <script type="module">let appName = "neon".toUpperCase();let slogen = "Cheapest neon service!";let menu = prompt("enter menus saprated by space","Home About Contact Blog").split(" ")/*["home", "about", "contact", "blog"]*/;let nCards = prompt("number of cards",80);let titleLength = 20;let descriptionLength = 100;let color = ["#00FEFC","#00FF00","#15F4EE","#39FF14","#4D4DFF","#50BFE6","#66FF66","#6F00FF","#808080","#8F00FF","#9457EB","#9500FF","#AAF0D1","#BF00FF","#C3732A","#CCCCCC","#CCFF00","#CCFF00","#CFAA01","#DF00FF","#DF00FF","#F4BBFF","#F6890A","#FD5B78","#FE347E","#FE59C2","#FF00CC","#FF1818","#FF2603","#FF355E","#FF355E","#FF5F1F","#FF6037","#FF6EFF","#FF9933","#FF9966","#FFBF00","#FFCC33","#FFF01F","#FFFF66","#FFFF66",];let content = `ipsum dolor sit amet consectetur adipisicing elit. Exercitationem commodi necessitatibus neque deserunt aut praesentium consequuntur accusamus laudantium eum? Mollitia, vitae consequuntur. Molestias, aperiam quas? Quidem, eligendi, minus repudiandae dolores culpa error cupiditate porro animi illum quae ipsam nam laudantium? Suscipit a dolores nihil temporibus doloremque repellat dicta eligendi necessitatibus ducimus similique culpa asperiores, quis consectetur esse totam labore? Esse dolor totam labore deserunt deleniti voluptatum ipsum! Iste, ut dolorum. Numquam laboriosam quos quas nemo quia quod tenetur velit at itaque nesciunt odio quam accusamus aspernatur cupiditate adipisci eum expedita repudiandae in reprehenderit exercitationem deserunt, optio earum nostrum? Reiciendis, illo at soluta facilis, eligendi odio vitae, harum illum fugiat ducimus est debitis cumque recusandae corrupti! Quos omnis voluptatem neque ipsa nemo quod, aliquam facilis officia magni? Iusto harum enim inventore nesciunt aliquam, velit, ratione exercitationem fugit ab vel nam voluptates ut alias tempora! Obcaecati ipsa nostrum placeat minima ea temporibus, ab quae corrupti veniam vel numquam animi voluptas dolor nisi eveniet tempore natus autem qui? Reiciendis accusamus aliquam sed, ratione ipsam quidem qui fuga placeat esse repudiandae eius, eum quibusdam velit pariatur nemo assumenda voluptas, quam cumque vero nesciunt voluptatibus. Quaerat delectus possimus optio tempore quos voluptas, consequuntur quisquam quae dicta nesciunt, nobis dolores ex, hic eos ullam aliquam a saepe ea repudiandae exercitationem tenetur tempora? Dolor labore, quae voluptatibus corrupti ab autem! Laborum consectetur ut exercitationem placeat praesentium, fugiat ea necessitatibus tempore cupiditate? Dolorem dolorum sint ea accusamus debitis voluptas porro consectetur impedit rerum, rem non vitae ut eveniet provident libero. Accusantium debitis consectetur nam! Amet aperiam consequatur nemo, harum repudiandae laudantium fugiat natus accusamus nihil quo laboriosam dicta dolor minus praesentium ipsa reiciendis odio? Nobis, quaerat voluptatem exercitationem odit deserunt iure corrupti sit explicabo harum, necessitatibus autem perferendis! Quidem voluptatem quasi totam praesentium nobis sit officia eos unde!`;let root = document.querySelector("#root");
+      Header();
+      Body();
+      Footer();
+      function Header() { // color, appName, slogan, root, menuFill()
+        let heading = document.createElement("div");
+        heading.className = "heading";heading.style.background = color[Math.floor(Math.random() * (color.length - 1))];
+        heading.innerHTML = `<div class="logo"><h1>${appName}</h1><p>${slogen}</p></div><div class="menu"></div>`;
+        root.appendChild(heading);MenuFill();
+      }
+      function Footer() { // color, root
+        let footer = document.createElement("div");
+        footer.className = "footer";footer.innerHTML = `<div></div>`;
+        footer.style.background = color[Math.floor(Math.random() * (color.length - 1))];
+        root.appendChild(footer);
+      }
+      function MenuFill() { // color, menu
+        let menuContainer = document.querySelector(".menu");
+        menu.forEach((e) => {
+          if (e !== "") {let lnk = document.createElement("a");lnk.href = "./" + e + ".html";lnk.textContent = e;
+            lnk.style.background = color[Math.floor(Math.random() * (color.length - 1))];
+            menuContainer.appendChild(lnk);}
+        });
+      }
+      function Card() { // color, content,  titleLength, descriptionLength
+        let container = document.querySelector(".container");
+        let num = Math.floor(Math.random() * (content.length - 200));
+        let card = document.createElement("div");card.className = "card";
+        card.style.background = `linear-gradient(${color[Math.floor(Math.random() * (color.length - 1))]}, ${color[Math.floor(Math.random() * (color.length - 1))]})`;
+        card.innerHTML = `<div class = "img"></div><h4>${content.substring(num, num + titleLength).trim().replace(/,/g, "").replace("?", "").replace(/!/g, "")}</h4><p>${content.substring(num + titleLength, num + titleLength + descriptionLength).trim()}</p><hr><h2 class="price">Rs: ${Math.floor(Math.random() * 100)}</h2></div>`;
+        container.appendChild(card);
+      }
+      function Body() { // Card(), nCards, root
+        let container = document.createElement("div");container.className = "container";root.appendChild(container);
+        for (let i = 0; i < nCards; i++) {Card();}
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "namaste.dev",
+  "version": "1.0.0",
+  "description": "building along with the akshay saini",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Amit Anand",
+  "license": "ISC",
+  "dependencies": {
+    "jsdom": "^21.1.1"
+  }
+}

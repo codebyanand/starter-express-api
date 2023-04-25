@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <h1></h1>
+    <button onclick="addBtn(prompt('enter button name'))">add Button</button>
+    <div id="root"></div>
+    <div id="msg"style="width: 20em;height: 400px;line-height: 0.3em;overflow: scroll;padding: 10px;">
+      <h3>Click Responses...</h3>
+    </div>
+    <script>
+      let c = 1;
+      let btnArr = ["Index", "About", "Contact", "Pages", "Profile", "Team"];
+      let root = document.getElementById("root");
+      let msg = document.getElementById("msg");
+      let body = document.querySelector("body");
+      function getUrl() {
+        let url = window.location.href.split("/");
+        return url[url.length - 1].split(".")[0];
+      }
+      setPage();
+      function setPage() {
+        document.querySelector("h1").textContent = getUrl() + " page";
+        document.querySelector("title").textContent = getUrl() + " page";
+        if (document.querySelectorAll("#root > button").length == 0) {
+          btnArr.forEach((e) => {addBtn(e);});
+        }
+      }
+      function addBtn(fn) {
+        let btn = document.createElement("button");
+        btn.className = "btn";
+        btn.textContent = fn;
+        btn.setAttribute("onclick", `changeRaute("${fn}")`);
+        root.appendChild(btn);
+      }
+      function changeRaute(raute) {
+        let msgarr = document.querySelectorAll("h3");
+        let lasttext = msgarr[msgarr.length - 1].textContent.split(" ")[0];
+        if(lasttext == raute){c++}else{c = 1}
+        let stateObj = { button: raute, msg: " clicked", count: c };
+        window.history.pushState(stateObj, raute, "./" + slug(raute));
+        let h3 = document.createElement("h3");
+        h3.textContent = window.history.state.button + window.history.state.msg + " x" + window.history.state.count;
+        msg.appendChild(h3);getUrl();setPage();}
+      function slug(str) {
+        return  str.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '');
+      }
+    </script>
+  </body>
+</html>
